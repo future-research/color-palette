@@ -2,7 +2,7 @@
 
 A powerful, simple, and convenient library for defining, manipulating, and using colors.
 
-![demo](https://github.com/future-research/dashboard/assets/5778798/092a9148-d22a-4aa5-bb1c-e1ce3e001423)
+![demo](https://github.com/future-research/dashboard/assets/5778798/05ce807b-3bca-4a87-a2d0-b55f36804204)
 
 ```
 npm install --save @future-research/color-palette
