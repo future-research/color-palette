@@ -1,0 +1,68 @@
+name: WebsiteUtils CI / CD
+on: [push]
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.18.x]
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      NPM_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v2
+
+      - name: Setup CI ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@future-research'
+      - name: CI Prep
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: |
+          npm run build
+      - name: Unit Tests
+        run: npm run test
+  build-release:
+    name: Build and Publish after Tests
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.18.x]
+
+    if: (github.event_name == 'create' || github.event_name == 'push') && startsWith(github.ref, 'refs/tags/')
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      NPM_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v2
+
+      - name: Setup CI ${{ matrix.node-version }}
+        # Setup .npmrc file to publish to GitHub Packages
+        # and Publish to GitHub Package Registry
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com/
+          scope: '@future-research'
+      - name: CI Prep
+        run: npm install
+      - name: Build
+        run: |
+          npm run build
+      - name: Unit Tests
+        run: npm run test
+      - name: Publish to GitHub Package Registry
+        run: npm publish
