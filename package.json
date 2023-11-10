@@ -1,5 +1,5 @@
 {
-  "name": "@future-research/color-palette",
+  "name": "color-palette",
   "version": "1.0.3",
   "description": "Easily construct, manipulate, and use color palettes.",
   "author": "feature-research",
