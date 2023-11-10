@@ -8,8 +8,6 @@ npm install --save @future-research/color-palette
 
 ![demo](https://github.com/future-research/dashboard/assets/5778798/83a2ce9c-deee-4803-95a0-ea5de10fe202)
 
-
-
 ## Type safety all the way through
 
 <img width="866" alt="Screen Shot 2023-03-04 at 11 44 56 AM" src="https://user-images.githubusercontent.com/5778798/222918282-2de50e30-a30e-4c15-bf55-1bd24094e6ed.png">
@@ -89,7 +87,7 @@ Because a `Color` instance has `#toString()` defined to return its hex (or rgba)
 
 ```tsx
 // In SomeComponent.tsx
-// Assuming you're using something like styled-components in React JS
+// Assuming you're using something like styled-components in React JS.
 
 export const SomeComponent = () => {
   return <div css={styles.wrapper}>Hello, world!</div>
