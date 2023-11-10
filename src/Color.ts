@@ -8,7 +8,7 @@ import {
   RgbaConfig,
   RgbaString,
 } from './types'
-import deepFreeze from 'deep-freeze'
+import { deepFreeze } from './internal/utils'
 
 const TRANSPARENT_COLOR_RGBA = 'rgba(255, 255, 255, 0)'
 const PRIVATE_CONSTRUCTOR_KEY = Symbol()
