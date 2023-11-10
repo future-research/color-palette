@@ -134,7 +134,7 @@ const offWhiteLightBaseColor = Colors.White.OffWhite.light.base
 # Contributing
 
 1. Make your changes
-2. Add tests to maintain ~100% coverage given how critical this package is.
+2. Add tests to maintain ~100% coverage.
 3. Open a pull request
 
 ## How to manually test changes locally
