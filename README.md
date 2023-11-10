@@ -6,7 +6,7 @@ A powerful, simple, and convenient library for defining, manipulating, and using
 npm install --save @future-research/color-palette
 ```
 
-![demo](https://github.com/future-research/dashboard/assets/5778798/4b325457-0d48-404f-963b-f446f1cab0ce)
+![demo](https://github.com/future-research/dashboard/assets/5778798/83a2ce9c-deee-4803-95a0-ea5de10fe202)
 
 
 
