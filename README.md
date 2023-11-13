@@ -144,10 +144,10 @@ To manually test your changes in a dependent project before releasing, you can f
 1. Build this package: `npm run build`
 2. `cd` into the dependent project directory.
 3. Assuming this package is a sibling of the dependent project in your local system,
-   run `sudo [npm link](https://docs.npmjs.com/cli/v9/commands/npm-link) ../web`
+   run `sudo [npm link](https://docs.npmjs.com/cli/v9/commands/npm-link) ../color-palette`
 4. Use your changes in the dependent project's code
 5. Run the dependent project to ensure your changes work as expected
 6. If you need to make changes to this package, make sure to run steps #1, #4, and #5 again.
 
 Once you're done testing, you can unlink the local package from your dependent project by running the following from your dependent project's directory:
-`sudo npm unlink ../web`
+`sudo npm unlink ../color-palette`
